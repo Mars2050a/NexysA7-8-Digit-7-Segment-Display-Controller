@@ -1,0 +1,45 @@
+# ========== Qt 编译产物 ==========
+*.o
+*.obj
+moc_*.cpp
+moc_*.h
+ui_*.h
+qrc_*.cpp
+*.pro.user
+Makefile
+Makefile.Debug
+Makefile.Release
+.qmake.stash
+
+# ========== Qt Creator 构建目录 ==========
+build-*/
+release/
+debug/
+*/release/
+*/debug/
+
+# ========== MinGW GCC 编译临时 ==========
+*.o
+*.d
+
+# ========== Vivado 产物 ==========
+prj/*.runs/
+prj/*.cache/
+prj/*.sim/
+prj/*.hw/
+prj/*.ip_user_files/
+prj/*.jou
+prj/*.log
+prj/*.str
+prj/.*/
+
+# ========== 开发环境本地备份 ==========
+.blue-abyss-safety/
+
+# ========== 系统文件 ==========
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# ========== 分发包（编译产出，每次重新打包） ==========
+dist/

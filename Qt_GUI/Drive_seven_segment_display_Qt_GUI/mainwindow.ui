@@ -1,0 +1,21 @@
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Nexys A7 - 7-Segment Display Controller</string>
+  </property>
+  <widget class="QWidget" name="centralWidget" />
+  <widget class="QStatusBar" name="statusBar" />
+ </widget>
+ <layoutDefault spacing="6" margin="11" />
+ <resources/>
+ <connections/>
+</ui>
