@@ -20,8 +20,9 @@ Qt GUI (PC) ---USB/UART--> Nexys A7 (FPGA)
 
 ```
 Drive_seven_segment_display/
++-- README.md                      本说明文件
 +-- doc/
-|   +-- README.md                  本说明文件
+|   +-- 截图 (jpg/png)             上板验证效果截图
 +-- src/                            Verilog 设计源文件
 |   +-- uart_receiver.v             UART 接收模块 (115200 8N1)
 |   +-- seven_seg_driver.v          8位七段数码管动态扫描驱动
@@ -259,7 +260,7 @@ mingw32-make
 
 ## 四、上板验证效果
 1. 烧录成功后，数码管显示 `00000000`，如图：
-   ![image](FPGA串口接收前.jpg)
+   ![image](doc/FPGA串口接收前.jpg)
 
 ---
 
