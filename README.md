@@ -9,7 +9,7 @@
 ```
 Qt GUI (PC) ---USB/UART--> Nexys A7 (FPGA)
     |                           |
-    |-- 设置 8 个数字 0~9       |-- UART 接收模块
+    |-- 设置 8 个数字 0~9        |-- UART 接收模块
     |-- 点击 [发送]              |-- 解析 8 个字节
     +-- 发送 8 字节              +-- 更新 8 个数码管显示
 ```
@@ -28,7 +28,6 @@ Drive_seven_segment_display/
 |   +-- seven_seg_driver.v          8位七段数码管动态扫描驱动
 |   +-- top.v                       顶层模块（整合以上两个模块）
 +-- xdc/
-|   +-- nexys_a7.xdc                原始约束（官方模板，已注释）
 |   +-- system.xdc                  有效约束文件（供综合/实现使用）
 +-- prj/
 |   +-- Drive_seven_segment_display.xpr   Vivado 工程文件
@@ -99,7 +98,7 @@ Drive_seven_segment_display/
 - 打开后点击 **I/O Ports** 标签
 - 核对所有引脚是否与 `system.xdc` 一致
 
-### 5. 烧录到开发板
+### 5. 下载bit流到开发板
 
 ```
 1. 连接 Nexys A7 到电脑（USB 线，供电+编程）
@@ -108,7 +107,7 @@ Drive_seven_segment_display/
 4. Program Device -> 选择生成的 .bit 文件
 ```
 
-> **提示：** 烧录完成后，如果还没接串口，数码管默认显示 `00000000`。
+> **提示：** 下载bit流完成后，如果还没接串口，数码管默认显示 `00000000`。
 
 ---
 
@@ -190,6 +189,14 @@ mingw32-make
 - 发送日志格式：`[hh:mm:ss] TX [12345678] (8 bytes)`
 - 接收日志格式：`[hh:mm:ss] RX [hex data]`
 
+### 上位机界面截图
+
+**初始状态：**
+![image](doc/上位机初始状态.png)
+
+**发送数字后的效果：**
+![image](doc/上位机串口发送后.png)
+
 ### 完整操作步骤
 
 ```
@@ -259,8 +266,12 @@ mingw32-make
 ---
 
 ## 四、上板验证效果
-1. 烧录成功后，数码管显示 `00000000`，如图：
-   ![image](doc/FPGA串口接收前.jpg)
+
+**下载bit流成功后，数码管显示 `00000000`：**
+![image](doc/FPGA串口接收前.jpg)
+
+**通过上位机发送数字后，数码管更新显示：**
+![image](doc/FPGA串口接收后.jpg)
 
 ---
 
